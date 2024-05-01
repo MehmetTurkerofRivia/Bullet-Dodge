@@ -5,17 +5,24 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    int speed;
+    float speed;
+    public static float zaman = 1f;
     private void Start()
     {
-        speed = Random.Range(3, 5);
+        speed = Random.Range(3+(zaman/30), 5 + (zaman / 30));
     }
     void Update()
     {
+        zaman += Time.deltaTime;
+        bulletmovement();
+    }     
+
+    void bulletmovement()
+    {
         transform.localPosition -= new Vector3(speed * Time.deltaTime, 0f, 0f);
 
-        if (transform.localPosition.x<=-21)
+        if (transform.localPosition.x <= -21)
             Destroy(gameObject);
-    }     
+    }
 
 }

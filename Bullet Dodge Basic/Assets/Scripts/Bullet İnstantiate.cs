@@ -7,15 +7,14 @@ public class Bulletİnstantiate : MonoBehaviour
 {
     [SerializeField] Transform[] BulletInstantiatePoint;
     [SerializeField] GameObject Bulletpf;
-    void Start()
+    int zar;
+    private void Update()
     {
-        StartCoroutine(BulletInstantiateRoutine());
+        Instantiate(Bulletpf);
     }
 
-    IEnumerator BulletInstantiateRoutine()
+    void BulletInstant()
     {
-            yield return new WaitForSeconds(1f);
-            int randomTP = UnityEngine.Random.Range(0, BulletInstantiatePoint.Length);
-            Instantiate(Bulletpf, BulletInstantiatePoint[randomTP].position, Quaternion.identity);
+        zar =  
     }
 }

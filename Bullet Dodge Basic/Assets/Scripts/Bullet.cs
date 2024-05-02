@@ -15,11 +15,12 @@ public class Bullet : MonoBehaviour
     {
         zaman += Time.deltaTime;
         bulletmovement();
+        Debug.Log("zaman" + zaman);
     }     
 
     void bulletmovement()
     {
-        transform.localPosition -= new Vector3(speed * Time.deltaTime, 0f, 0f);
+        transform.localPosition -= new Vector3(speed * zaman, 0f, 0f);
 
         if (transform.localPosition.x <= -21)
             Destroy(gameObject);

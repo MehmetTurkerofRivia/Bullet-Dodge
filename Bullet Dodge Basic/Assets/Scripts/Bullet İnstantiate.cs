@@ -8,21 +8,10 @@ public class Bulletİnstantiate : MonoBehaviour
 {
     [SerializeField] Transform[] BulletInstantiatePoint;
     [SerializeField] GameObject BulletPrefab;
-    private float bolen;
     private float lastShotTime = 0f;
-    private void Start()
-    {
-        bolen = Bullet.zaman;
-    }
     void Update()
     {
-        bolen += (Bullet.zaman/120f);
-        if (bolen >= 1.9f)
-            bolen = 1.9f;
-
-        Debug.Log(bolen);
-
-        if (Time.time - lastShotTime >= (2f - bolen))
+        if (Time.time - lastShotTime >= 0.5f)
         {
             ShootBullet();
             lastShotTime = Time.time;

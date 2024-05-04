@@ -6,23 +6,27 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     float speed;
-    public static float zaman = 1f;
     private void Start()
     {
-        speed = Random.Range(3+(zaman/30), 5 + (zaman / 30));
+        speed = Random.Range(0.1f, 0.3f);
     }
     void Update()
     {
-        zaman += Time.deltaTime;
         bulletmovement();
-        Debug.Log("zaman" + zaman);
     }     
 
     void bulletmovement()
     {
-        transform.localPosition -= new Vector3(speed * zaman, 0f, 0f);
+        transform.localPosition -= new Vector3(speed, 0f, 0f);
 
         if (transform.localPosition.x <= -21)
+            Destroy(gameObject);
+    }
+
+    void OnCollisionEnter(Collision collision)
+
+    {
+        if (collision.gameObject.CompareTag("blade"))
             Destroy(gameObject);
     }
 

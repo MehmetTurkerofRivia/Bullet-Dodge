@@ -6,21 +6,17 @@ using UnityEngine;
 
 public class Bulletİnstantiate : MonoBehaviour
 {
-    [SerializeField] Transform[] BulletInstantiatePoint;
     [SerializeField] GameObject BulletPrefab;
-    private float lastShotTime = 0f;
+    float randomtime;
     void Update()
     {
-        if (Time.time - lastShotTime >= 0.5f)
-        {
-            ShootBullet();
-            lastShotTime = Time.time;
-        }
+        ShootBullet();
+        randomtime = Random.Range
     }
     void ShootBullet()
     {
-        int randomTP = UnityEngine.Random.Range(0, BulletInstantiatePoint.Length);
+        
         Quaternion rotation = Quaternion.Euler(0, 0, 90); 
-        Instantiate(BulletPrefab, BulletInstantiatePoint[randomTP].position, rotation);
+        Instantiate(BulletPrefab, transform.position, rotation);
     }
 }

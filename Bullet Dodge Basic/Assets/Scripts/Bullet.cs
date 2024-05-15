@@ -8,7 +8,7 @@ public class Bullet : MonoBehaviour
     float speed;
     private void Start()
     {
-        speed = Random.Range(0.1f, 0.3f);
+        speed = Random.Range(0.05f, 0.1f);
     }
     void Update()
     {

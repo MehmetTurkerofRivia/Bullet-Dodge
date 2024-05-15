@@ -22,12 +22,16 @@ public class Bullet : MonoBehaviour
         if (transform.localPosition.x <= -21)
             Destroy(gameObject);
     }
-
-    void OnCollisionEnter(Collision collision)
-
+                            
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("blade"))
+        {
+            Debug.Log("a");
             Destroy(gameObject);
+            Debug.Log("b");
+        }
+
     }
 
 }

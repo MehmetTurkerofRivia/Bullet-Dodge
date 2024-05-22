@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
@@ -8,7 +5,7 @@ public class Bullet : MonoBehaviour
     float speed;
     private void Start()
     {
-        speed = Random.Range(0.05f, 0.1f);
+        speed = Random.Range(0.01f, 0.03f);
     }
     void Update()
     {
@@ -22,16 +19,14 @@ public class Bullet : MonoBehaviour
         if (transform.localPosition.x <= -21)
             Destroy(gameObject);
     }
-                            
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("blade"))
         {
             Debug.Log("a");
-            Destroy(gameObject);
+            Destroy(collision.gameObject);
             Debug.Log("b");
         }
-
     }
-
 }

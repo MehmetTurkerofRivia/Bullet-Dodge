@@ -1,22 +1,26 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
-using Unity.Mathematics;
 using UnityEngine;
 
 public class Bulletİnstantiate : MonoBehaviour
 {
     [SerializeField] GameObject BulletPrefab;
     float randomtime;
-    void Update()
+    float HighestTime = 2f;
+    float LowestTime = 1f;
+    private void Start()
     {
-        ShootBullet();
-        randomtime = Random.Range
+        StartCoroutine(ShootBullet());
     }
-    void ShootBullet()
+    IEnumerator ShootBullet()
     {
-        
+        randomtime = Random.Range(LowestTime, HighestTime);          
         Quaternion rotation = Quaternion.Euler(0, 0, 90); 
         Instantiate(BulletPrefab, transform.position, rotation);
+        yield return new WaitForSeconds(randomtime);
+        if (LowestTime >=0.1f)
+            LowestTime -= 0.02f;
+        if (HighestTime >= 0.3f)
+            HighestTime -= 0.01f;
+        StartCoroutine(ShootBullet());
     }
 }

@@ -27,7 +27,7 @@ public class Bulletİnstantiate : MonoBehaviour
 
         if (HighestTime >= 1f)
             HighestTime -= 0.05f;
-        Quaternion rotation = Quaternion.Euler(0, 0, 90); 
+        Quaternion rotation = Quaternion.Euler(0, 0, 180); 
         Instantiate(BulletPrefab, transform.position, rotation);
 
         StartCoroutine(ShootBullet());

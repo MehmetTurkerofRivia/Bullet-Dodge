@@ -7,6 +7,7 @@ public class AnimationController : MonoBehaviour
     private Animator animator; 
     private bool isAttack = false;
     private bool attackCD = true;
+    [SerializeField] GameObject Bladepf;
     void Start()
     {
         animator = GetComponent<Animator>();    
@@ -35,9 +36,11 @@ public class AnimationController : MonoBehaviour
     {
         isAttack = true;
         attackCD = false;
+        Bladepf.SetActive(true);
         animator.SetInteger("AnimSelect", 2);
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.35f);
         animator.SetInteger("AnimSelect", 0);
+        Bladepf.SetActive(false);
         isAttack = false;
         yield return new WaitForSeconds(1f);
         attackCD = true;

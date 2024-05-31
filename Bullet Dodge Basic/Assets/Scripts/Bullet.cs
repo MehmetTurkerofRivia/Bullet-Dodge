@@ -25,8 +25,7 @@ public class Bullet : MonoBehaviour
         if (collision.gameObject.CompareTag("blade"))
         {
             Debug.Log("a");
-            Destroy(collision.gameObject);
-            Debug.Log("b");
+            Destroy(gameObject);
         }
     }
 }

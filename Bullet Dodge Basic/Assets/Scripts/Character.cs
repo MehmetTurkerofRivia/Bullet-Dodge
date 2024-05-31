@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Character : MonoBehaviour
 {
-    public float hareketHizi = 8f;
+    public float hareketHizi = 10f;
     private Rigidbody2D rb;
     public static int level = 1;
     void Start()

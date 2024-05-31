@@ -11,20 +11,16 @@ public class AnimationController : MonoBehaviour
     }
     void Update()
     {
-        if((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D)))
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
         {
             animator.SetInteger("AnimSelect", 1);
         }
-        else
+        else 
             animator.SetInteger("AnimSelect", 0);
 
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButtonDown(0))
         {
-            animator.SetInteger("AnimSelect", 2);
+             animator.SetInteger("AnimSelect", 2);
         }   
-        if (Input.GetMouseButtonUp(0))
-        {
-            animator.SetInteger("AnimSelect", 0);
-        }
     }
 }

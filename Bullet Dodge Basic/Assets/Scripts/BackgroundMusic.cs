@@ -6,7 +6,6 @@ public class BackgroundMusic : MonoBehaviour
 {
     [SerializeField] AudioClip[] musicClips;
     private AudioSource audioSource;
-
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -15,7 +14,6 @@ public class BackgroundMusic : MonoBehaviour
             StartCoroutine(PlayRandomMusic());
         }
     }
-
     IEnumerator PlayRandomMusic()
     {
         while (true)

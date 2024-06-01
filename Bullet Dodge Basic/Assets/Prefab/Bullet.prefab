@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 199018030013691915}
   - component: {fileID: -2134306131524764879}
   - component: {fileID: 913694012255726421}
-  - component: {fileID: -706469067269620567}
   - component: {fileID: 7639987214053079149}
   m_Layer: 0
   m_Name: Bullet
@@ -180,25 +179,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.95, y: 1.09}
   m_EdgeRadius: 0
---- !u!114 &-706469067269620567
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 191798231452433568}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d95afebd33b0ccd49aa41eeb79e5ab6e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  arrowSoundClips:
-  - {fileID: 8300000, guid: 5519969c0cdc0e7438d44cb94293b475, type: 3}
-  - {fileID: 8300000, guid: 45d6a5f7d593142469f46a6d8ecc8891, type: 3}
-  - {fileID: 8300000, guid: efb5d99d8e49de74fa90257bfb79e5fc, type: 3}
-  - {fileID: 8300000, guid: 6d13e9ee72c9cd042b6c9a394d3c8a29, type: 3}
-  - {fileID: 8300000, guid: 0ca19a7c4472213408dcd65b6d1a0d9e, type: 3}
-  - {fileID: 8300000, guid: acc7c29e9ec309f44bde3feba931b3cd, type: 3}
 --- !u!82 &7639987214053079149
 AudioSource:
   m_ObjectHideFlags: 0
@@ -211,7 +191,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.3
+  m_Volume: 0.15
   m_Pitch: 1
   Loop: 0
   Mute: 0

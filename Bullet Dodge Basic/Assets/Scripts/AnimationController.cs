@@ -30,9 +30,7 @@ public class AnimationController : MonoBehaviour
             {
                 StartCoroutine(AttackAnim()); 
             }
-        }
-
-         
+        }             
     }
     public void PlayRandomSwordSound()
     {
@@ -42,17 +40,17 @@ public class AnimationController : MonoBehaviour
             audioSource.PlayOneShot(clip);
         }
     }
-
     IEnumerator AttackAnim()
     {
         isAttack = true;
         attackCD = false;
-        Bladepf.SetActive(true);
+        Bladepf.SetActive(true);           
         animator.SetInteger("AnimSelect", 2);
         PlayRandomSwordSound();
-        yield return new WaitForSeconds(0.6f);
-        animator.SetInteger("AnimSelect", 0);
+        yield return new WaitForSeconds(0.3f);
         Bladepf.SetActive(false);
+        yield return new WaitForSeconds(0.3f);
+        animator.SetInteger("AnimSelect", 0);          
         isAttack = false;
         yield return new WaitForSeconds(1f);
         attackCD = true;

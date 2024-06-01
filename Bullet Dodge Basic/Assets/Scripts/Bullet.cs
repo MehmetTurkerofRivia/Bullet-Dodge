@@ -1,16 +1,26 @@
 using UnityEngine;
 
+using UnityEngine;
+
 public class Bullet : MonoBehaviour
 {
+    public AudioClip[] arrowSoundClips; // Oynatýlacak ok seslerinin listesi
+    private AudioSource audioSource;
     float speed;
+
     private void Start()
     {
-        speed = Random.Range(0.02f, 0.03f);
+        speed = Random.Range(0.1f, 0.2f);
+        audioSource = GetComponent<AudioSource>();
+
+        // Rastgele bir ses efekti çal
+        PlayRandomArrowSound();
     }
+
     void Update()
     {
         bulletmovement();
-    }     
+    }
 
     void bulletmovement()
     {
@@ -28,4 +38,14 @@ public class Bullet : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    void PlayRandomArrowSound()
+    {
+        if (arrowSoundClips.Length > 0)
+        {
+            AudioClip clip = arrowSoundClips[Random.Range(0, arrowSoundClips.Length)];
+            audioSource.PlayOneShot(clip);
+        }
+    }
 }
+

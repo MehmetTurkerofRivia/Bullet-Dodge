@@ -8,9 +8,12 @@ public class AnimationController : MonoBehaviour
     private bool isAttack = false;
     private bool attackCD = true;
     [SerializeField] GameObject Bladepf;
+    public AudioClip[] swordSounds; // Oynatýlacak kýlýç seslerinin listesi
+    private AudioSource audioSource;
     void Start()
     {
-        animator = GetComponent<Animator>();    
+        animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
     void Update()
     {
@@ -25,11 +28,19 @@ public class AnimationController : MonoBehaviour
 
             if ((Input.GetMouseButtonDown(0)) && attackCD == true)
             {
-                StartCoroutine(AttackAnim());
+                StartCoroutine(AttackAnim()); 
             }
         }
 
          
+    }
+    public void PlayRandomSwordSound()
+    {
+        if (swordSounds.Length > 0)
+        {
+            AudioClip clip = swordSounds[Random.Range(0, swordSounds.Length)];
+            audioSource.PlayOneShot(clip);
+        }
     }
 
     IEnumerator AttackAnim()
@@ -38,7 +49,8 @@ public class AnimationController : MonoBehaviour
         attackCD = false;
         Bladepf.SetActive(true);
         animator.SetInteger("AnimSelect", 2);
-        yield return new WaitForSeconds(0.35f);
+        PlayRandomSwordSound();
+        yield return new WaitForSeconds(0.6f);
         animator.SetInteger("AnimSelect", 0);
         Bladepf.SetActive(false);
         isAttack = false;

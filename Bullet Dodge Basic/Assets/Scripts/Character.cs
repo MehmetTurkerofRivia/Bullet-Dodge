@@ -16,6 +16,5 @@ public class Character : MonoBehaviour
         float yatayHareket = Input.GetAxis("Horizontal") * hareketHizi;
         float dikeyHareket = Input.GetAxis("Vertical") * hareketHizi;
         rb.velocity = new Vector2(yatayHareket, dikeyHareket);
-        Debug.Log(Score);
     }
 }

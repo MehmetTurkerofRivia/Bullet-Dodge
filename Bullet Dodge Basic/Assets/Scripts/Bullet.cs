@@ -1,11 +1,11 @@
 using UnityEngine;
 
-using UnityEngine;
-
 public class Bullet : MonoBehaviour
 {
-    public AudioClip[] arrowSoundClips; // Oynatýlacak ok seslerinin listesi
+    public AudioClip[] arrowSoundClips;
     private AudioSource audioSource;
+    [SerializeField] GameObject deathPanel;
+    [SerializeField] GameObject mainScene;
     float speed;
     private void Start()
     {
@@ -32,6 +32,13 @@ public class Bullet : MonoBehaviour
         {
             Destroy(gameObject);
             Character.Score += 1;
+        }
+
+        if (collision.gameObject.CompareTag("character"))
+        {
+            Time.timeScale = 0;
+            deathPanel.SetActive(true);
+            mainScene.SetActive(false);
         }
     }
     void PlayRandomArrowSound()

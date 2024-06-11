@@ -6,6 +6,7 @@ TagManager:
   tags:
   - blade
   - Character
+  - Mouse
   layers:
   - Default
   - TransparentFX

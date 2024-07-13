@@ -34,12 +34,12 @@ public class Bullet : MonoBehaviour
             Character.Score += 1;
         }
 
-        if (collision.gameObject.CompareTag("character"))
-        {
-            Time.timeScale = 0;
-            deathPanel.SetActive(true);
-            mainScene.SetActive(false);
-        }
+        //if (collision.gameObject.CompareTag("character"))
+        //{
+        //    Time.timeScale = 0;
+        //    deathPanel.SetActive(true);
+        //    mainScene.SetActive(false);
+        //}
     }
     void PlayRandomArrowSound()
     {

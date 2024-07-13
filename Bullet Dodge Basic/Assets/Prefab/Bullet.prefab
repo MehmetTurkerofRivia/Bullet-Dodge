@@ -134,6 +134,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 6d13e9ee72c9cd042b6c9a394d3c8a29, type: 3}
   - {fileID: 8300000, guid: 0ca19a7c4472213408dcd65b6d1a0d9e, type: 3}
   - {fileID: 8300000, guid: acc7c29e9ec309f44bde3feba931b3cd, type: 3}
+  deathPanel: {fileID: 0}
+  mainScene: {fileID: 0}
 --- !u!61 &913694012255726421
 BoxCollider2D:
   m_ObjectHideFlags: 0

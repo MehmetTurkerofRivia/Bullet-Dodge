@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class Reload : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] GameObject deathPanel;
+    [SerializeField] GameObject mainScene;
+    public void Death()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Time.timeScale = 0;
+        deathPanel.SetActive(true);
+        mainScene.SetActive(false);
     }
 }

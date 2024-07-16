@@ -8,7 +8,7 @@ public class Bullet : MonoBehaviour
 
     private void Start()
     {
-        speed = Random.Range(0.02f, 0.04f);
+        speed = Random.Range(0.01f, 0.03f);
         audioSource = GetComponent<AudioSource>();
         PlayRandomArrowSound();
     }

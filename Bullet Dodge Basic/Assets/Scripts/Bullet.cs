@@ -26,9 +26,8 @@ public class Bullet : MonoBehaviour
             Destroy(gameObject);
             Character.Score += 1;
         }
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
+    }  
+private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("blade"))
         {
@@ -43,12 +42,18 @@ public class Bullet : MonoBehaviour
             if (reload != null)
             {
                 reload.Death();
-            }
-            else
-            {
-                Debug.LogError("Reload component not found in the scene.");
+                
+                
+                Bullet[] bullets = FindObjectsOfType<Bullet>();
+
+                // Destroy each bullet
+                foreach (Bullet bullet in bullets)
+                {
+                    Destroy(bullet.gameObject);
+                }
             }
         }
+
     }
 
     void PlayRandomArrowSound()

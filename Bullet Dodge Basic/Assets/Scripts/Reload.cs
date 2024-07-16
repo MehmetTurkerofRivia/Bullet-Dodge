@@ -6,15 +6,16 @@ using UnityEngine.SceneManagement;
 public class Reload : MonoBehaviour
 {
     [SerializeField] GameObject deathPanel;
-    [SerializeField] GameObject mainScene;
+    [SerializeField] GameObject gameScreen;
     public void Death()
     {
-        Time.timeScale = 0;
         deathPanel.SetActive(true);
-        mainScene.SetActive(false);
+        gameScreen.SetActive(false);
+        Time.timeScale = 0;
     }
     public void ReloadCurrentScene()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

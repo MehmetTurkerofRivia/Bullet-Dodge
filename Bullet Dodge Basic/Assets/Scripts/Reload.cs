@@ -15,8 +15,8 @@ public class Reload : MonoBehaviour
     }
     public void ReloadCurrentScene()
     {
-        Time.timeScale = 1;
-        Character.Score = 0;
+        Time.timeScale = 1;        
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Character.Score = 0;
     }
 }

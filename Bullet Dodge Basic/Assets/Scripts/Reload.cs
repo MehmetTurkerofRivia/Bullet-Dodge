@@ -20,4 +20,12 @@ public class Reload : MonoBehaviour
         Time.timeScale = 1;
         Character.Score = 0;
     }
+
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene(0);
+        }
+    }
 }

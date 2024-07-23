@@ -450,7 +450,7 @@ RectTransform:
   m_GameObject: {fileID: 1553131933}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.86, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1814049542}
@@ -473,7 +473,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.87058824}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.5019608}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -530,10 +530,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 705930994}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 12.752499}
-  m_SizeDelta: {x: 0, y: -25.495}
+  m_AnchorMin: {x: 0.16333334, y: 0}
+  m_AnchorMax: {x: 0.80333334, y: 1}
+  m_AnchoredPosition: {x: 5, y: 12.752502}
+  m_SizeDelta: {x: 108, y: -25.495}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1589389338
 MonoBehaviour:
@@ -934,6 +934,22 @@ PrefabInstance:
     - target: {fileID: 2595136099928514268, guid: da8fb5f674bc1724bacf9f053bb5cae5, type: 3}
       propertyPath: m_Name
       value: Button (Legacy)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6481564443520145350, guid: da8fb5f674bc1724bacf9f053bb5cae5, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6481564443520145350, guid: da8fb5f674bc1724bacf9f053bb5cae5, type: 3}
+      propertyPath: m_FillAmount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6481564443520145350, guid: da8fb5f674bc1724bacf9f053bb5cae5, type: 3}
+      propertyPath: m_UseSpriteMesh
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6481564443520145350, guid: da8fb5f674bc1724bacf9f053bb5cae5, type: 3}
+      propertyPath: m_PreserveAspect
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

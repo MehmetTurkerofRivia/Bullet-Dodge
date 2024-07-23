@@ -4,17 +4,24 @@ using UnityEngine;
 
 public class Character : MonoBehaviour
 {
-    public float hareketHizi = 11f;
+    public float moveSpeed = 50f;
     private Rigidbody2D rb;
+    private Vector2 moveInput; 
     public static int Score = 0;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
     }
+
     void Update()
     {
-        float yatayHareket = Input.GetAxis("Horizontal") * hareketHizi;
-        float dikeyHareket = Input.GetAxis("Vertical") * hareketHizi;
-        rb.velocity = new Vector2(yatayHareket, dikeyHareket);
+        moveInput.x = Input.GetAxis("Horizontal");
+        moveInput.y = Input.GetAxis("Vertical");
+    }
+
+    void FixedUpdate()
+    {
+        rb.MovePosition(rb.position + moveInput * moveSpeed * Time.fixedDeltaTime);
     }
 }

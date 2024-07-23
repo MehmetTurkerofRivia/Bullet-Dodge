@@ -23,6 +23,7 @@ public class Bulletİnstantiate : MonoBehaviour
 
         Quaternion rotation = Quaternion.Euler(0, 0, 180); 
         Instantiate(BulletPrefab, transform.position, rotation);
+        StopAllCoroutines();
         StartCoroutine(ShootBullet());
     }
 }

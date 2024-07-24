@@ -8,12 +8,12 @@ public class Bullet : MonoBehaviour
 
     private void Start()
     {
-        speed = Random.Range(0.1f, 0.15f);
+        speed = Random.Range(0.3f, 0.4f);
         audioSource = GetComponent<AudioSource>();
         PlayRandomArrowSound();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         bulletmovement();
     }
